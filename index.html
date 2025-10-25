@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Olhar Urbano Viçosa — veja, denuncie, mude</title>
+  <meta name="description" content="Plataforma cívica para denunciar e mapear problemas de infraestrutura urbana em Viçosa." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-root">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo">OV</div>
+        <div class="brand-text">
+          <div class="title">Olhar Urbano <span class="accent">Viçosa</span></div>
+          <div class="subtitle">Advocacy · Denúncias · Mapeamento cidadão</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#report">Reportar</a>
+        <a href="#issues">Problemas</a>
+        <a href="#articles">Artigos</a>
+        <a class="btn" href="#contribuir">Contribuir</a>
+      </nav>
+
+      <button class="mobile-menu" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>Olhar Urbano Viçosa — <span class="accent">veja, denuncie, mude</span></h1>
+          <p class="lead">Plataforma cívica de mobilização: compile denúncias, aponte locais, pressione autoridades e acesse material de advocacy.</p>
+
+          <p class="cta">
+            <a class="btn-primary" href="#report">Reportar problema</a>
+            <a class="btn-ghost" href="#issues">Ver problemas</a>
+          </p>
+
+          <p class="mini">Proposta editorial: defesa intransigente da mobilização cidadã e ação direta não violenta para responsabilizar o poder público.</p>
+        </div>
+
+        <aside class="hero-right">
+          <div class="search-card">
+            <label class="label">Busca por problemas / endereço</label>
+            <div class="search-field">
+              <input placeholder="Ex.: Av. Getúlio Vargas, Viçosa" aria-label="Pesquisar endereço" />
+              <button class="btn-primary">Buscar</button>
+            </div>
+            <div class="map-placeholder" id="map">Mapa — integrar Leaflet/Mapbox</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content container">
+      <aside class="report" id="report">
+        <div class="card">
+          <h2>Reportar um problema</h2>
+          <p class="muted">Envie localização, foto e descrição — denúncias públicas ajudam a pressionar o conserto.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Envio simulado — integre API para persistência.');">
+            <label>Título<input required /></label>
+            <label>Categoria<select><option>Buraco / Pavimentação</option><option>Iluminação</option><option>Árvores / Paisagismo</option><option>Obras / Entulho</option></select></label>
+            <label>Endereço / Localização<input /></label>
+            <label>Descrição<textarea rows="4"></textarea></label>
+            <label>Foto (opcional)<input type="file" /></label>
+
+            <div class="form-actions"><button type="submit" class="btn-primary">Enviar denúncia</button></div>
+            <div class="note">Obs: este é um protótipo. Integração com API e moderação de conteúdo necessária antes de publicação.</div>
+          </form>
+        </div>
+      </aside>
+
+      <section class="feed" id="issues">
+        <div class="card">
+          <header class="card-head">
+            <h2>Problemas reportados</h2>
+            <div class="sort">Ordenar por: <select><option>Mais votados</option><option>Mais recentes</option></select></div>
+          </header>
+
+          <div class="issues-list">
+            <!-- Exemplos estáticos; quando integrado a backend, substituir por lista dinâmica -->
+            <article class="issue">
+              <div class="issue-main">
+                <h3>Buraco na Avenida Getúlio Vargas</h3>
+                <div class="meta">Buraco / Pavimentação · Av. Getúlio Vargas, 142 · <span class="date">20/10/2025</span></div>
+                <p class="desc">Descrição resumida — exemplo de como a denúncia aparece no feed.</p>
+              </div>
+
+              <div class="issue-side">
+                <div class="votes">124 ↑</div>
+                <a class="btn-outline" href="#">Ver</a>
+              </div>
+            </article>
+
+            <article class="issue">
+              <div class="issue-main">
+                <h3>Iluminação pública apagada no bairro Santo Antônio</h3>
+                <div class="meta">Iluminação · R. das Flores, quadra 3 · <span class="date">18/10/2025</span></div>
+                <p class="desc">Trecho exemplo demonstrativo do feed.</p>
+              </div>
+
+              <div class="issue-side">
+                <div class="votes">86 ↑</div>
+                <a class="btn-outline" href="#">Ver</a>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="more">Carregando mais — implementar paginação/infinite scroll</div>
+        </div>
+
+        <div class="card articles" id="articles">
+          <h3>Artigos</h3>
+          <div class="article-grid">
+            <article class="mini-card">
+              <h4>Direito à cidade: táticas de pressão cidadã</h4>
+              <p>Como organizar denúncias coletivas que levem a respostas oficiais e obras efetivas.</p>
+              <a class="link">Leia mais →</a>
+            </article>
+
+            <article class="mini-card">
+              <h4>Mapeamento participativo: metodologias</h4>
+              <p>Ferramentas e cuidados éticos para traçar problemas urbanos com precisão.</p>
+              <a class="link">Leia mais →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand-sm">Olhar Urbano <span class="accent">Viçosa</span></div>
+        <div class="muted">Promovendo mobilização e accountability urbana.</div>
+      </div>
+
+      <div class="foot-links muted">
+        <div>Contato: contato@olharurbanovicosa.org</div>
+        <div><a class="link" href="#">Política de Privacidade</a></div>
+        <div><a class="link" href="#">Termos</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu simple toggle
+    document.querySelectorAll('.mobile-menu').forEach(btn=> btn.addEventListener('click', ()=>{
+      document.querySelector('.nav').classList.toggle('open');
+    }));
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root{
+  --bg: #ffffff;
+  --text: #0f1724;
+  --muted: #64748b;
+  --primary-600: #0ea5e9;
+  --primary-400: #60a5fa;
+  --accent: #0284c7;
+  --card: #ffffff;
+  --border: #e6eef8;
+  --radius: 12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+.topbar{border-bottom:1px solid var(--border);background:var(--bg)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--primary-600),var(--primary-400));color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+.brand-text .title{font-weight:700}
+.brand-text .subtitle{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:16px;align-items:center}
+.nav a{color:inherit;text-decoration:none;font-size:14px}
+.btn{padding:8px 12px;border-radius:8px;border:1px solid var(--border)}
+.btn-primary{background:var(--primary-600);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;border:none}
+.btn-ghost{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid var(--border)}
+.btn-outline{padding:6px 10px;border-radius:8px;border:1px solid var(--border);text-decoration:none}
+.mobile-menu{display:none;background:transparent;border:0;font-size:20px}
+.accent{color:var(--accent)}
+.hero{padding:28px 0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.lead{color:var(--muted);margin-top:8px}
+.mini{color:var(--muted);font-size:13px;margin-top:14px}
+.search-card{background:var(--card);border:1px solid var(--border);padding:12px;border-radius:12px}
+.search-field{display:flex;gap:8px;margin-top:8px}
+.search-field input{flex:1;padding:10px;border-radius:8px;border:1px solid var(--border)}
+.map-placeholder{height:180px;border-radius:8px;border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);margin-top:10px}
+.content{display:grid;grid-template-columns:1fr;gap:18px;padding-bottom:48px}
+.card{background:var(--card);border:1px solid var(--border);padding:14px;border-radius:12px}
+.report .card{position:sticky;top:16px}
+label{display:block;margin-top:10px;font-size:13px}
+input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border)}
+.form-actions{display:flex;justify-content:flex-end;margin-top:12px}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.feed .card-head{display:flex;justify-content:space-between;align-items:center}
+.issues-list{margin-top:12px;display:flex;flex-direction:column;gap:12px}
+.issue{display:flex;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;border:1px solid var(--border)}
+.issue h3{margin:0}
+.meta{font-size:12px;color:var(--muted);margin-top:6px}
+.issue-side{text-align:right}
+.votes{font-weight:700;color:var(--primary-600)}
+.more{margin-top:12px;text-align:center;color:var(--muted)}
+.articles .article-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+.mini-card{border-radius:8px;padding:10px;border:1px solid var(--border)}
+.link{font-size:13px;color:var(--accent);text-decoration:none}
+.footer{border-top:1px solid var(--border);padding:18px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.muted{color:var(--muted)}
+@media(min-width:780px){
+  .hero-grid{grid-template-columns:1fr 420px}
+  .content{grid-template-columns:360px 1fr;gap:18px}
+  .mobile-menu{display:none}
+  .nav{display:flex}
+}
+@media(max-width:779px){
+  .nav{display:none}
+  .mobile-menu{display:block}
+  .mobile-menu + .nav.open{display:flex;position:absolute;left:18px;right:18px;top:68px;background:var(--card);padding:12px;border-radius:10px;flex-direction:column;gap:8px}
+}
+.title{font-size:18px}
+.hero h1{font-size:22px;margin:0}
